@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <title>JSON to HTML</title>
+    <link rel="stylesheet" href="./html/style.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+
+<body>   
+<div id="container">
+<article id="contents">
+  <h1 class="title-webdesign">JSON からHTML 作成テスト</h1>
+
+<!--for文 でJSONを繰り返す-->
+{% for i in json_to_html %}
+  <ul class="list-webdesign">
+<div><p class="link-title-wd">{{ i.list_A }}</p>
+<p>都道府県：{{i.list_B}}</p>
+<p>天気：{{i.list_C}}</p>
+<p>降水確率：{{i.list_D}}</p>
+<p>その他：{{i.list_E}}</p>
+</div>
+</ul>
+
+{% endfor %}
+</article>
+
+<table>
+{% for i in json_to_html %}
+
+  <tr>
+    <th>タイトル</th>
+    <td>{{i.list_A}}</td>
+  </tr>
+  <tr>
+    <th>都道府県</th>
+    <td>{{i.list_B}}</td>
+  </tr>
+  <tr>
+    <th>天気</th>
+    <td>{{i.list_C}}</td>
+  </tr>
+  <tr>
+    <th>降水確率</th>
+    <td>{{i.list_D}}</td>
+  </tr>
+  <tr>
+    <th>その他</th>
+    <td>{{i.list_E}}</td>
+  </tr>
+{% endfor %}
+</table>
+
+
+
+
+
+
+</body>
+</html>
